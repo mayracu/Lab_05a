@@ -12,7 +12,6 @@ function sum(a, b) { //eslint-disable-line
   let firstValue = a + b;
   let secondValue = `The sum of ${a} and ${b} is ${firstValue}.`;
   return [firstValue, secondValue];
-  //return firstValue;
 }
 // Here is the test for sum(); uncomment it to run it
 testSum(4, 7);
@@ -32,7 +31,6 @@ function multiply(a, b) { //eslint-disable-line
   let firstValue = a * b;
   let secondValue = `The product of ${a} and ${b} is ${firstValue}.`;
   return [firstValue, secondValue];
-  //return firstValue;
 }
 
 // Here is the test for multiply(); uncomment it to run it
@@ -84,13 +82,21 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 let testArray = [2, 3, 4]; //eslint-disable-line
 
-function sumArray(sumArr) { //eslint-disable-line
+function sumArray(a) { //eslint-disable-line
+  let x = Number(a[0]);
+  let y = Number(a[1]);
+  let z = Number(a[2]);
 
+  let firstSum = Number(sum(x, y)[0]);
+  let firstElement = Number(sum(firstSum, z)[0]);
+
+  let string = `${x},${y},${z} was passed in as an array of numbers, and ${firstElement} is their sum.`;
+  return [firstElement, string];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
